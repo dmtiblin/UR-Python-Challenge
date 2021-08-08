@@ -46,10 +46,15 @@ PLTotal = sum(PL)
 
 # Calculate the changes in "Profit/Losses" over the entire period, 
 PLchangemonthly = []
+formattedPLchangemonthly = []
+PLchangemonthly.insert(0,0)
 for i in range(len(PL)):
     if i > 0:
         PLchangesinglemonth = PL[i]- PL[i-1]
         PLchangemonthly.append(PLchangesinglemonth)
+        formattedPLchangesinglemonth = PLchangesinglemonth
+        formattedPLchangemonthly.append(formattedPLchangesinglemonth)
+        
 
 # then find the average of those changes
 AvgPLchange = sum(PLchangemonthly) / (totalmonths-1)
@@ -61,7 +66,12 @@ maxPLincrease = max(PLchangemonthly)
 minPLincrease = min(PLchangemonthly)
 
 #zip together the max and min PL changes with their corresponding months
-
+reportedPLchangezip = dict(zip(Date, PLchangemonthly))
+for Date, PLchangemonthly in reportedPLchangezip.items():
+    if PLchangemonthly == maxPLincrease:
+        formattedmaxPLincrease = Date + " " + "${:,.2f}".format(PLchangemonthly)
+    if PLchangemonthly == minPLincrease:
+        formattedminPLincrease = Date + " " + "${:,.2f}".format(PLchangemonthly)
 
 #print final results
 print("Financial Analysis:") 
@@ -69,9 +79,18 @@ print("-----------------------")
 print("Total Months: " + str(totalmonths))
 print("Total Profit: " + "${:,.2f}".format(PLTotal))
 print("Average Change in PL: " + "${:,.2f}".format(AvgPLchange))
-print("Greatest monthly increase in profit: " + "${:,.2f}".format(maxPLincrease))
-print("Greatest monthly decrease in profit: " + "${:,.2f}".format(minPLincrease))
-#and export to text file 
+print("Greatest monthly increase in profit: " + formattedmaxPLincrease)
+print("Greatest monthly decrease in profit: " + formattedminPLincrease)
 
+#and export to text file 
+with open("BudgetAnalysis.txt", "w") as f:
+    f.write("Financial Analysis:\n")
+    f.write("-----------------------\n")
+    f.write("Total Months: " + str(totalmonths) + "\n")
+    f.write("Total Profit: " + "${:,.2f}".format(PLTotal) + "\n") 
+    f.write("Average Change in PL: " + "${:,.2f}".format(AvgPLchange) + "\n")
+    f.write("Greatest monthly increase in profit: " + formattedmaxPLincrease + "\n")
+    f.write("Greatest monthly decrease in profit: " + formattedminPLincrease + "\n")
+    f.close()
 
 

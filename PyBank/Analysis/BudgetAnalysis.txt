@@ -1,0 +1,7 @@
+Financial Analysis:
+-----------------------
+Total Months: 86
+Total Profit: $38,382,578.00
+Average Change in PL: $-2,315.12
+Greatest monthly increase in profit: Feb-2012 $1,926,159.00
+Greatest monthly decrease in profit: Sep-2013 $-2,196,167.00
