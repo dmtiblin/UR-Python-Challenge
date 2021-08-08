@@ -73,7 +73,17 @@ print(SortedResults[2])
 print(SortedResults[3])
 print("-----------------------")
 print("The Winner is " + str(Winner))
-#export to text file 
 
+#export to text file 
+with open("electionresults.txt", "w") as f:
+    f.write("Election Results")
+    f.write("-----------------------")
+    f.write(str(SortedResults[0]))
+    f.write(str(SortedResults[1]))
+    f.write(str(SortedResults[2]))
+    f.write(str(SortedResults[3]))
+    f.write("-----------------------")
+    f.write("The Winner is " + str(Winner))
+    f.close()
 
   
