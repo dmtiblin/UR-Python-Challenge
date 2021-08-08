@@ -74,7 +74,6 @@ print(SortedResults[3])
 print("-----------------------")
 print("The Winner is " + str(Winner))
 #export to text file 
-with open("out.txt", "w") as f:
-    f.write("OUTPUT")
+
 
   
