@@ -76,13 +76,13 @@ print("The Winner is " + str(Winner))
 
 #export to text file 
 with open("electionresults.txt", "w") as f:
-    f.write("Election Results")
-    f.write("-----------------------")
-    f.write(str(SortedResults[0]))
-    f.write(str(SortedResults[1]))
-    f.write(str(SortedResults[2]))
-    f.write(str(SortedResults[3]))
-    f.write("-----------------------")
+    f.write("Election Results\n")
+    f.write("-----------------------\n")
+    f.write(str(SortedResults[0]) + "\n")
+    f.write(str(SortedResults[1]) + "\n")
+    f.write(str(SortedResults[2]) + "\n")
+    f.write(str(SortedResults[3]) + "\n")
+    f.write("-----------------------\n")
     f.write("The Winner is " + str(Winner))
     f.close()
 

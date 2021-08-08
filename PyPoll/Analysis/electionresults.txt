@@ -1,1 +1,8 @@
-Election Results-----------------------{'Candidate': 'Khan', 'Votes': 2218231, 'VotesPercent': '63.00%'}{'Candidate': 'Correy', 'Votes': 704200, 'VotesPercent': '20.00%'}{'Candidate': 'Li', 'Votes': 492940, 'VotesPercent': '14.00%'}{'Candidate': 'OTootley', 'Votes': 105630, 'VotesPercent': '3.00%'}-----------------------The Winner is {'Candidate': 'Khan', 'Votes': 2218231, 'VotesPercent': '63.00%'}
+Election Results
+-----------------------
+{'Candidate': 'Khan', 'Votes': 2218231, 'VotesPercent': '63.00%'}
+{'Candidate': 'Correy', 'Votes': 704200, 'VotesPercent': '20.00%'}
+{'Candidate': 'Li', 'Votes': 492940, 'VotesPercent': '14.00%'}
+{'Candidate': 'OTootley', 'Votes': 105630, 'VotesPercent': '3.00%'}
+-----------------------
+The Winner is {'Candidate': 'Khan', 'Votes': 2218231, 'VotesPercent': '63.00%'}
