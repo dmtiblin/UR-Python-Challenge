@@ -19,11 +19,18 @@ with open(csvpath, newline= '') as csvfile:
         Candidate.append(row[2])
 
 # calculate total number of votes cast
+totalvotes = len(Candidate)
 
 # generate a complete list of candidates who received votes
-     # UNIQUE
+#brut forecce method:
+CandidatesList= []
+for x in Candidate:
+    if x not in CandidatesList:
+        CandidatesList.append(x)
+print(CandidatesList)
 
 # calculate total number of votes each candidate won
+
 
 # calculate percentage of votes each candidate won
 
@@ -32,5 +39,6 @@ with open(csvpath, newline= '') as csvfile:
 # print final results
 print("Election Results")
 print("-----------------------")
-
+print("Total Votes: " + str(totalvotes))
+print("-----------------------")
 #export to text file 
