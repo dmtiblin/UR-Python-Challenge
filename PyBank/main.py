@@ -17,7 +17,7 @@ with open(csvpath, newline= '') as csvfile:
     #add data to python lists
     for row in csvreader:
         Date.append(row[0])
-        PL.append(row[1])
+        PL.append(int(row[1]))
 
 
 # calculate total number of months included in the dataset
@@ -46,12 +46,18 @@ totalmonths2 = totaldays / 30
 print(totalmonths2)
 
 # calculate net total amount of "Profit/Losses" over the entire period
-
-
+PLTotal = sum(PL)
+print(PLTotal)
 
 # Calculate the changes in "Profit/Losses" over the entire period, 
+#
+PLchangemonthly = []
+for i in range(len(PL)):
+    if i > 0:
+        PLchangesinglemonth = PL[i]- PL[i-1]
+        PLchangemonthly.append(PLchangesinglemonth)
 
-
+print(PLchangemonthly)
 # then find the average of those changes
 
 
